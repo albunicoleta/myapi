@@ -10,7 +10,7 @@ class User extends CI_Model {
     /**
      * is used to return an user by id
      * 
-     * @param type int $id
+     * @param int $id
      * @return mixed 
      */
     public function getUserById($id)
@@ -36,7 +36,7 @@ class User extends CI_Model {
     /**
      * deletes a row from database by id
      * 
-     * @param type int $id
+     * @param int $id
      * @return boolean
      */
     public function deleteUserById($id)
@@ -46,6 +46,16 @@ class User extends CI_Model {
             return TRUE;
         }
         return FALSE;
+    }
+
+    /**
+     * creates a new user
+     * 
+     * @param array $data
+     */
+    public function createUser($data)
+    {
+        $this->db->insert('users', $data);
     }
 
 }
